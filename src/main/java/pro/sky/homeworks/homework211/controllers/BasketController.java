@@ -1,5 +1,6 @@
 package pro.sky.homeworks.homework211.controllers;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,8 +10,8 @@ import pro.sky.homeworks.homework211.services.BasketService;
 
 import java.util.List;
 
-
 @RestController
+@ConditionalOnProperty("context-path")
 @RequestMapping("/store/order")
 public class BasketController {
 
@@ -21,12 +22,12 @@ public class BasketController {
     }
 
     @GetMapping(path = "/add")
-    public Product addOrder(@RequestParam("orderId") int orderId) {
+    public List<Product> addOrder(@RequestParam("orderId") List<Integer> orderId) {
         return basketService.addOrder(orderId);
     }
 
-   @GetMapping(path = "/get")
-    public List<Product> getAll(){
+    @GetMapping(path = "/get")
+    public List<Product> getAll() {
         return basketService.getAll();
     }
 }

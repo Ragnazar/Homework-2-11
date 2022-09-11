@@ -13,10 +13,14 @@ public class BasketServiceImpl implements BasketService {
     private final List<Product> basket = new ArrayList<>();
 
     @Override
-    public Product addOrder(int orderId) {
-        Product product = new Product(orderId);
-        basket.add(product);
-        return product;
+    public List<Product> addOrder(List<Integer> orderId) {
+        List<Product> result = new ArrayList<>();
+        for (Integer integer : orderId) {
+            Product product = new Product(integer);
+            basket.add(product);
+            result.add(product);
+        }
+        return new ArrayList<>(result);
     }
 
     @Override
