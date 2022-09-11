@@ -1,6 +1,5 @@
 package pro.sky.homeworks.homework211.controllers;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,7 +10,6 @@ import pro.sky.homeworks.homework211.services.BasketService;
 import java.util.List;
 
 @RestController
-@ConditionalOnProperty("context-path")
 @RequestMapping("/store/order")
 public class BasketController {
 
