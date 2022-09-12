@@ -10,7 +10,7 @@ import pro.sky.homeworks.homework211.services.BasketService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/store/order")
+@RequestMapping("/order")
 public class BasketController {
 
     private final BasketService basketService;
